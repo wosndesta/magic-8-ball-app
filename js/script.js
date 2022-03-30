@@ -37,13 +37,14 @@ const options = [
 ];
 
 form.addEventListener("click", function(){
-  if (input.value.length < 1) {
+    if (input.value.length < 1) {
+      
       par.textContent = "Please enter a question!";
   }
     else {
-    //   const runNum = Math.floor(Math.random() *  options.length);
-      const runNum = input.value.length % options.length;
-      
+      const runNum = Math.floor(Math.random() *  options.length);
+    //   const runNum = input.value.length % options.length;
+      console.log(runNum);
       setTimeout(function () {
           roll.src = options[runNum];
           par.textContent = `you entered: ${input.value}`;
