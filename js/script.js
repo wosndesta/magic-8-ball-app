@@ -15,7 +15,6 @@ input.setAttribute("size", "25")
 const options = [
 		"./image/magic8ball_1.png",
 		"./image/magic8ball_2.png",
-		"./image/magic8ball_3.png",
 		"./image/magic8ball_4.png",
 		"./image/magic8ball_5.png",
 		"./image/magic8ball_6.png",
