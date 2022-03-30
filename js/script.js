@@ -32,8 +32,8 @@ const options = [
 		"./image/magic8ball_18.png",
 		"./image/magic8ball_19.png",
 		"./image/magic8ball_20.png",
-		"./image/magic8ball_extra.png",
-		"./image/magic8ball_start.png",
+		
+		
 ];
 
 form.addEventListener("click", function(){
