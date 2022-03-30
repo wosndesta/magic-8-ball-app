@@ -1,46 +1,56 @@
-
-const emptyDiv = document.getElementById("emptyDiv")
-    let form = document.createElement("form");
-    form.setAttribute("method", "post");
-    form.setAttribute("action", "submit.php");
-    
-let br = document.createElement("br");
-
-//Create a label for your input field telling your user to "Ask me anything!"
-let label = document.createElement("label");
-label.textContent = "Ask me anything!";
-form.appendChild(label);
-form.appendChild(br.cloneNode());
-
-//Create an input field for users to ask a question
-inputOne = document.createElement("input");
-inputOne.type = "TEXT";
-inputOne.name = "myInput";
-inputOne.value = "Values of my Input";
-form.appendChild(inputOne);
-
-form.appendChild(br.cloneNode());
-form.appendChild(br.cloneNode());
-
-//Create an "ask" button (this will run the function that outputs a random magic 8 ball image)
-let button = document.createElement("input");
-button.setAttribute("type", "submit");
-button.setAttribute("value", "Ask");
-form.appendChild(button);
+const form = document.getElementById("form1");
+const button = document.getElementById("button");
+const input = document.getElementById("input");
+const answer = document.getElementById("answer");
+const eight = document.getElementById("eight");
+const roll = document.getElementById("roll");
+const par = document.createElement("p");
+par.setAttribute("id","warning")
+eight.appendChild(par);
+form.setAttribute("onsubmit", "event.preventDefault()");
+input.setAttribute("placeholder", "Ask me anything!");
+input.setAttribute("size", "25")
 
 
+const options = [
+		"./image/magic8ball_1.png",
+		"./image/magic8ball_2.png",
+		"./image/magic8ball_3.png",
+		"./image/magic8ball_4.png",
+		"./image/magic8ball_5.png",
+		"./image/magic8ball_6.png",
+		"./image/magic8ball_7.png",
+		"./image/magic8ball_8.png",
+		"./image/magic8ball_9.png",
+		"./image/magic8ball_10.png",
+		"./image/magic8ball_11.png",
+		"./image/magic8ball_12.png",
+		"./image/magic8ball_13.png",
+		"./image/magic8ball_14.png",
+		"./image/magic8ball_15.png",
+		"./image/magic8ball_16.png",
+		"./image/magic8ball_17.png",
+		"./image/magic8ball_18.png",
+		"./image/magic8ball_19.png",
+		"./image/magic8ball_20.png",
+		"./image/magic8ball_extra.png",
+		"./image/magic8ball_start.png",
+];
 
-emptyDiv.appendChild(form)
+form.addEventListener("click", function(){
+  if (input.value.length < 1) {
+      par.textContent = "Please enter a question!";
+  }
+    else {
+    //   const runNum = Math.floor(Math.random() *  options.length);
+      const runNum = input.value.length % options.length;
+      
+      setTimeout(function () {
+          roll.src = options[runNum];
+          par.textContent = `you entered: ${input.value}`;
+          input.value = "";
+      }, 500)
 
-
-let divOne = document.createElement("div");
-divOne.setAttribute("id","divMagic");
-emptyDiv.appendChild(divOne);
-
-
-
-
-
-
-
+  }
+});
 

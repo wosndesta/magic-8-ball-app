@@ -1,0 +1,39 @@
+
+body {
+    text-align: center;
+    background-image: url("../image/mg2.jpg");
+background-position: center;
+background-repeat: no-repeat;
+background-size:cover;
+/* color: white */
+}
+#container{
+    margin-top: 180px;
+}
+form {
+    display: inline-block;
+}
+img {
+    width: 400px;
+    height: 400px;
+   margin: auto;
+}
+#roll{
+    width: 400px;
+    height: 400px;
+   margin: auto; 
+
+}
+#warning{
+    color: white;
+    font-size: 25px;
+}
+@media only screen and (max-width:600px){
+    #roll{
+    width: 200px;
+    height: 200px;
+   margin: auto; 
+ 
+
+}
+}
