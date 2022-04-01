@@ -5,11 +5,17 @@ const answer = document.getElementById("answer");
 const eight = document.getElementById("eight");
 const roll = document.getElementById("roll");
 const par = document.createElement("p");
+const parOne = document.createElement("p")
+const src1 = document.getElementById("src")
 par.setAttribute("id","warning")
 eight.appendChild(par);
 form.setAttribute("onsubmit", "event.preventDefault()");
 input.setAttribute("placeholder", "Ask me anything!");
-input.setAttribute("size", "25")
+input.setAttribute("size", "25");
+input.appendChild(parOne);
+const startCircle = "./image/magic8ball_start.png";
+
+
 
 
 const options = [
@@ -38,19 +44,72 @@ const options = [
 
 form.addEventListener("click", function(){
     if (input.value.length < 1) {
-      
-      par.textContent = "Please enter a question!";
+		par.style.color = "red";
+		par.textContent = "Please enter a question!" ;
+		
   }
     else {
       const runNum = Math.floor(Math.random() *  options.length);
-    //   const runNum = input.value.length % options.length;
-      console.log(runNum);
-      setTimeout(function () {
-          roll.src = options[runNum];
-          par.textContent = `you entered: ${input.value}`;
-          input.value = "";
-      }, 500)
+        console.log(runNum);
+		animat();
+		par.style.color = "white";
+        par.textContent = `you asked: ${input.value}`;
+  
+		setTimeout(function () {
+		  roll.src = options[runNum];
+		  
+		  parOne.textContent = `you asked: ${input.value}`;
+		  input.value = "";
 
-  }
+		}, 2000);
+
+		setTimeout(function () {
+			roll.src = startCircle;	
+		}, 9000);
+
+
+    }
+
+
 });
+
+
+
+
+
+
+
+function animat() {
+    roll.animate([
+        { transform: 'scale(1)', opacity: 50, offset: 0 },
+        { transform: 'scale(.8) rotate(360deg)', opacity: 1, offset: .5 }
+    ], {
+        duration: 2000,
+        easing: 'ease-in-out',
+        delay: 200,
+        iterations: 1,
+        direction: 'alternate',
+        fill: 'auto'
+    })
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
