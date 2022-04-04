@@ -44,7 +44,7 @@ form.addEventListener("click", function(){
     if (input.value.length < 1) {
 		par.style.color = "red";
 		par.textContent = "Please enter a question!" ;
-		
+		par.style.background = " rgba(0, 0, 0, 0.5)";
   }
     else {
       const runNum = Math.floor(Math.random() *  options.length);

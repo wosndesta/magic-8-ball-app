@@ -29,7 +29,7 @@ img {
     font-size: 35px;
 }
 p{
-    background-color:   rgba(0, 0, 0, 0.5) ;
+    /* background-color:   rgba(0, 0, 0, 0.5) ; */
      -webkit-border-radius: 20px;
         border-radius: 20px;
         padding: 20px;
