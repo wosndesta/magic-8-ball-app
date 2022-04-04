@@ -16,8 +16,6 @@ input.appendChild(parOne);
 const startCircle = "./image/magic8ball_start.png";
 
 
-
-
 const options = [
 		"./image/magic8ball_1.png",
 		"./image/magic8ball_2.png",
@@ -53,7 +51,8 @@ form.addEventListener("click", function(){
         console.log(runNum);
 		animat();
 		par.style.color = "white";
-        par.textContent = `you asked: ${input.value}`;
+		par.textContent = `you asked: ${input.value}`;
+		par.style.background = " rgba(0, 0, 0, 0.5)";
   
 		setTimeout(function () {
 		  roll.src = options[runNum];
@@ -65,7 +64,9 @@ form.addEventListener("click", function(){
 
 		setTimeout(function () {
 			roll.src = startCircle;	
-		}, 9000);
+			par.textContent = "";
+				par.style.background = "none";
+		}, 8000);
 
 
     }
